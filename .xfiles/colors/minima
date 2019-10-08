@@ -1,0 +1,39 @@
+! vim:ft=xdefaults
+! A Simple Dark Scheme Designed by Jed
+
+! special
+*.foreground:   #e4e4e5
+*.background:   #2a2929
+*.cursorColor:  #e4e4e5
+
+! black
+*.color0:       #2a2929
+*.color8:       #655c5a
+
+! red
+*.color1:       #a54242
+*.color9:       #cc6666
+
+! green
+*.color2:       #60b48a
+*.color10:      #4e9270
+
+! yellow
+*.color3:       #de935f
+*.color11:      #d0b75a
+
+! blue
+*.color4:       #5f819d
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #5e8d87
+*.color14:      #8abeb7
+
+! white
+*.color7:       #89908f
+*.color15:      #e4e4e5

@@ -1,2 +1,2 @@
-#include ".xfiles/colors/minima"
-#include ".xfiles/configs/urxvt"
+#include "/home/jed/.xfiles/configs/urxvt"
+#include "/home/jed/.xfiles/colors/minima"
