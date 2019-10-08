@@ -1,0 +1,86 @@
+!! minimal by jed
+
+window.client.padding.width: 0
+window.handle.width: 0
+
+!! menu
+
+menu.overlap: -40
+menu.items.font:shadow=y:shadowtint=0
+
+# background
+menu.items.bg: flat
+menu.items.bg.color: #2a2929
+
+# items
+menu.items.text.color: #e4e4e5
+menu.items.justify: left
+menu.items.disabled.text.color: #cc6666
+menu.items.padding: 35
+
+# titles
+menu.title.bg: flat
+menu.title.bg.color: #2a2929
+menu.title.text.color: #e4e4e5
+menu.title.text.justify: center
+
+# selected
+menu.items.active.bg: flat
+menu.items.active.bg.color: #2a2929
+menu.items.active.text.color: #655c5a
+
+# aux
+menu.border.width: 15
+menu.border.color: #2a2929
+menu.separator.width: 3
+menu.separator.color: #e4e4e5
+
+!! windows
+
+border.width: 0
+
+# titlebar
+window.*.label.bg: flat
+window.*.title.bg: flat
+window.*.label.bg.color: #2a2929
+window.*.title.bg.color: #2a2929
+window.*.label.text.color: #2a2929
+window.*.label.text.justiy: center
+
+#buttons
+window.*.button.*.bg: parentrelative
+window.*.button.*.*.image.color: #e4e4e5
+
+!! osd
+osd.label.text.color: #e4e4e5
+osd.hilight.bg: flat
+osd.hilight.bg.color: #d0b75a
+
+
+## buttons
+
+window.active.button.iconify.unpressed.image.color: #de935f
+window.active.button.max.unpressed.image.color: #60b48a
+window.active.button.close.unpressed.image.color: #a54242
+window.active.button.shade.unpressed.image.color: #5f819d
+window.active.button.desk.unpressed.image.color: #85678f
+
+window.active.button.iconify.pressed.image.color: #d0b75a
+window.active.button.max.pressed.image.color: #4e9270
+window.active.button.close.pressed.image.color: #cc6666
+window.active.button.shade.pressed.image.color: #81a2be
+window.active.button.desk.pressed.image.color: #b294bb
+
+window.inactive.button.*.unpressed.image.color: #e4e4e5
+
+window.inactive.button.iconify.hover.image.color: #de935f
+window.inactive.button.max.hover.image.color: #60b48a
+window.inactive.button.close.hover.image.color: #a54242
+window.inactive.button.shade.hover.image.color: #5f819d
+window.inactive.button.desk.pressed.image.color: #85678f
+
+window.inactive.button.iconify.pressed.image.color: #d0b75a
+window.inactive.button.max.pressed.image.color: #4e9270
+window.inactive.button.close.pressed.image.color: #cc6666
+window.inactive.button.shade.pressed.image.color: #81a2be
+window.inactive.button.desk.pressed.image.color: #b294bb

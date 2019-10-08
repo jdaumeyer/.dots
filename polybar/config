@@ -1,0 +1,253 @@
+; vim:ft=cfg
+;--------------------------------------------
+; bars                                      ;
+;--------------------------------------------
+
+; Openbox Botton Bar
+[bar/bottom]
+	dpi      = 192
+	width    = 100%
+	height   = 32
+	offset-x = 0
+	offset-y = 16
+	
+	bottom = true 
+	
+	background = #00000000
+	foreground = ${xrdb:foreground)
+	
+	spacing            = 0
+	padding-left       = 16
+	padding-right      = 16
+	padding-bottom	   = 8
+	module-margin-left = 0
+	
+	font-0 = "Overpass:size=5;3"
+	font-1 = "Material Icons:size=5"
+	
+	modules-left   = workspaces
+	modules-center = xwindow
+	modules-right  = spotify separator date battery volume
+	
+	fixed-center = true
+	
+[bar/top]
+	dpi = 192
+	width = 100%
+
+	bottom = false
+	
+	height        = 32
+	offset-y      = 16
+	padding-left  = 16
+	padding-right = 16
+
+	background = #00000000
+	foreground = ${xrdb:foreground}
+
+	font-0 = "Overpass:size=5;3"
+
+	modules-right = essid
+	modules-left  = ram cpu
+
+;--------------------------------------------
+; modules                                   ;
+;--------------------------------------------
+
+[module/network]
+	type          = internal/network
+	interface     = wlp4s0
+	ping-interval = 3
+
+[module/xwindow]
+	y-offset      = 10
+	type          = internal/xwindow
+	format        = <label>
+	label         = %title%
+	label-padding = 3
+
+	label-background = ${xrdb:background}
+	label-foreground = ${xrdb:foreground}
+
+
+[module/date]
+	type     = internal/date
+	interval = 1.0
+	time     = " %H:%M "
+	label    = "%time%"
+
+	format         = <label>
+	format-padding = 0
+
+	label-background = ${xrdb:color4}
+	label-foreground = ${xrdb:foreground}
+	label-padding    = 1
+
+	label-prefix = "{T1}{T-}"
+
+[module/spotify]
+	type     = custom/script
+	interval = 1
+	format   = <label>
+
+	exec = python /home/jed/.dots/polybar/polybar-spotify/spotify_status.py -f '{play_pause} {artist} - {song}'
+	label-padding    = 3
+	label-background = ${xrdb:color10}
+	label-foreground = ${xrdb:foreground}
+
+
+[module/battery]
+	type          = internal/battery
+	full-at       = 98
+	battery       = BAT0
+	adapter       = AC0
+	poll-interval = 5
+
+	format-charging = <label-charging>
+
+	label-charging            = "Charging %percentage%"
+	label-charging-background = ${xrdb:color0}
+	label-charging-foreground = ${xrdb:color7}
+	label-charging-padding    = 2
+
+	format-discharging = <label-discharging>
+
+	label-discharging            = "%percentage%%"
+	label-discharging-background = ${xrdb:color0}
+	label-discharging-foreground = ${xrdb:color7}
+	label-discharging-padding    = 2
+
+	format-full = <label-full>
+
+	label-full            = "%percentage%%"
+	label-full-background = ${xrdb:color0}
+	label-full-foreground = ${xrdb:color7}
+	label-full-padding    = 2
+
+[module/volume]
+	type          = internal/pulseaudio
+	format-volume = <label-volume>
+
+	mapped = true
+
+	label-volume            = "%percentage%%"
+	label-volume-background = ${xrdb:color0}
+	label-volume-foreground = ${xrdb:color7}
+	label-volume-padding    = 1
+
+	format-muted = <label-muted>
+
+	label-muted            = "Muted"
+	label-muted-background = ${xrdb:color0}
+	label-muted-foreground = ${xrdb:color7}
+	label-muted-padding    = 1
+
+	format-volume-padding = 0
+	format-muted-padding  = 0
+
+	ramp-headphones-0 = 
+
+[module/cpu]
+	type             = internal/cpu
+	interval         = 0.5
+	format           = <label>
+	label            = %percentage%%
+	label-background = ${xrdb:color4}
+	label-foreground = ${xrdb:background}
+	label-padding    = 1
+
+	label-prefix     = "%{T1}%{T-}"
+	label-prefix-backgroung = ${xrdb:color3}
+
+
+[module/ram]
+	type     = internal/memory
+	interval = 3
+
+	format           = <label>
+	label            = "%percentage_used%%"
+	label-background = ${xrdb:color5}
+	label-foreground = ${xrdb:background}
+	label-padding    = 1
+
+
+[module/essid]
+	inherit = module/network
+
+	format-connected = <label-connected>
+
+	label-connected               = "%essid%"
+	label-connected-background    = ${xrdb:color14}
+	label-connected-foreground    = ${xrdb:color0}
+	label-connected-padding       = 1
+
+	format-disconnected = <label-disconnected>
+
+	label-disconnected               = "DISCONNECTED"
+	label-disconnected-background    = ${xrdb:color0}
+	label-disconnected-foreground    = ${xrdb:color7}
+	label-disconnected-padding       = 1
+	label-disconnected-padding-right = 1
+
+
+[module/down]
+	inherit = module/network
+
+	format-connected = <label-connected>
+
+	format-connected-prefix            = 
+	format-connected-prefix-background = ${colors.down_p_bg}
+	format-connected-prefix-foreground = ${colors.modules_prefix_fg}
+	format-connected-prefix-padding    = 1
+
+	label-connected               = %{T2}%downspeed:7%%{T-}
+	label-connected-background    = ${colors.modules_bg}
+	label-connected-foreground    = ${colors.modules_fg}
+	label-connected-padding-right = 1
+
+[module/separator]
+	type               = custom/text
+	content            = separator
+	content-padding    = 0.1
+	content-background = #00000000
+	content-foreground = #00000000
+
+
+[module/workspaces]
+	type            = internal/xworkspaces
+	format          = <label-state>
+	index-sort      = true
+	wrapping-scroll = false
+	strip-wsnumbers = true
+	
+	label-active            = %index%
+	label-active-padding    = 3
+	label-active-foreground = ${xrdb:background}
+	label-active-background = ${xrdb:color11}
+	
+	label-empty            = %index%
+	label-empty-padding    = 3
+	label-empty-background = ${xrdb:background}
+	label-empty-foreground = ${xrdb:color7}
+
+	pin-workspaces = true
+
+[module/backlight]
+	type = internal/backlight
+
+	output = LVDS-1
+
+	card          = acpi_video0
+	enable-scroll = false
+
+	format        = <label>
+	format-prefix = 
+
+	format-prefix-padding    = 1
+	format-prefix-background = ${colors.cpu_p_bg}
+	format-prefix-foreground = ${colors.modules_prefix_fg}
+
+	label            = %percentage%%
+	label-background = ${colors.modules_bg}
+	label-foreground = ${colors.modules_fg}
+	label-padding    = 1
