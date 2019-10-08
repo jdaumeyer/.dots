@@ -7,4 +7,5 @@ Feel free to use and reference them as you please.
 * Terminal Emulator: URxvt
 * Window Manager: Openbox3
 * Panel/Bar:  Polybar
+* Launcher: Rofi
 

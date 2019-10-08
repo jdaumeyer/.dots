@@ -1,0 +1,4 @@
+feh --bg-scale ~/pic/bg/philly.jpg &
+polybar bottom &
+compton -CG &
+quicktile --daemonize &
