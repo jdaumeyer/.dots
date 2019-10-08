@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/usr/share/themes'
+let g:netrw_dirhist_2='/usr/share/themes/Xfce-4.0'
+let g:netrw_dirhist_3='/usr/share/themes'
+let g:netrw_dirhist_4='/usr/share/themes/Xfce-4.2'
+let g:netrw_dirhist_5='/usr/share/themes'
+let g:netrw_dirhist_6='/usr/share/themes/Xfce-flat'
+let g:netrw_dirhist_7='/usr/share/themes/Xfce-flat/gtk-2.0'
