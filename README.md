@@ -8,4 +8,5 @@ Feel free to use and reference them as you please.
 * Window Manager: Openbox3
 * Panel/Bar:  Polybar
 * Launcher: Rofi
+* Editor: neo-vim
 

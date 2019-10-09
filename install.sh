@@ -8,6 +8,6 @@
 # dot file directory
 
 rm -rf ~/.bashrc
-ln -s .bashrc ~/.bashrc
+ln -s $PWD/.bashrc ~/.bashrc
 
-ln -s .xfiles/ ~/.xfiles/
+ln -s $PWD/.xfiles/ ~/.xfiles/
