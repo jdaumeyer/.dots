@@ -23,8 +23,10 @@
 	module-margin-left = 0
 	
 	font-0 = "Overpass:size=5;3"
-	font-1 = "Material Icons:size=5"
+	font-1 = "Material Icons:size=6;4"
 	
+	diplay=eDP1
+
 	modules-left   = workspaces
 	modules-center = xwindow
 	modules-right  = spotify separator date battery volume
@@ -47,8 +49,7 @@
 
 	font-0 = "Overpass:size=5;3"
 
-	modules-right = essid
-	modules-left  = ram cpu
+	modules-right = essid network
 
 ;--------------------------------------------
 ; modules                                   ;
@@ -74,7 +75,7 @@
 	type     = internal/date
 	interval = 1.0
 	time     = " %H:%M "
-	label    = "%time%"
+	label    = "%{T2}%{T-}%time%"
 
 	format         = <label>
 	format-padding = 0
@@ -83,7 +84,7 @@
 	label-foreground = ${xrdb:foreground}
 	label-padding    = 1
 
-	label-prefix = "{T1}{T-}"
+	label-prefix = "%{T2}%{T-}"
 
 [module/spotify]
 	type     = custom/script
@@ -105,14 +106,14 @@
 
 	format-charging = <label-charging>
 
-	label-charging            = "Charging %percentage%"
+	label-charging            = "%{T2}%{T-} %percentage%"
 	label-charging-background = ${xrdb:color0}
 	label-charging-foreground = ${xrdb:color7}
 	label-charging-padding    = 2
 
 	format-discharging = <label-discharging>
 
-	label-discharging            = "%percentage%%"
+	label-discharging            = "%{T2}%{T-} %percentage%%"
 	label-discharging-background = ${xrdb:color0}
 	label-discharging-foreground = ${xrdb:color7}
 	label-discharging-padding    = 2
@@ -130,14 +131,14 @@
 
 	mapped = true
 
-	label-volume            = "%percentage%%"
+	label-volume            = "%{T2}%{T-} %percentage%%"
 	label-volume-background = ${xrdb:color0}
 	label-volume-foreground = ${xrdb:color7}
 	label-volume-padding    = 1
 
 	format-muted = <label-muted>
 
-	label-muted            = "Muted"
+	label-muted            = ""
 	label-muted-background = ${xrdb:color0}
 	label-muted-foreground = ${xrdb:color7}
 	label-muted-padding    = 1
@@ -219,13 +220,16 @@
 	index-sort      = true
 	wrapping-scroll = false
 	strip-wsnumbers = true
+
 	
-	label-active            = %index%
+	;label-active            = %index%
+	label-active            = "%{T2}%{T-}"
 	label-active-padding    = 3
 	label-active-foreground = ${xrdb:background}
 	label-active-background = ${xrdb:color11}
 	
-	label-empty            = %index%
+	;label-empty            = %index%
+	label-empty            = "%{T2}%{T-}"
 	label-empty-padding    = 3
 	label-empty-background = ${xrdb:background}
 	label-empty-foreground = ${xrdb:color7}

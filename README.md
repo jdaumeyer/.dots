@@ -10,3 +10,4 @@ Feel free to use and reference them as you please.
 * Launcher: Rofi
 * Editor: neo-vim
 
+## My Methodology

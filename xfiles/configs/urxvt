@@ -3,7 +3,7 @@
 ! URxvt Configuration
 
 ! Basic Configuration
-URxvt.geometry: 80x24
+URxvt.geometry: 90x24
 URxvt.scrollBar: false
 URxvt.font: xft:Hermit:size=10
 URxvt.internalBorder: 16
@@ -15,7 +15,10 @@ URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
 ! Copy and Paste
-
 URxvt.clipboard.autocopy: true
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
+
+! Beautifying
+URxvt.fade: 50
+URxvt.fadeColor: black 

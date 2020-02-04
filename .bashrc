@@ -2,41 +2,17 @@
 # ~/.bashrc
 #
 
+source ~/.dots/config
+
 [[ $- != *i* ]] && return
-
-colors() {
-	local fgc bgc vals seq0
-
-	printf "Color escapes are %s\n" '\e[${value};...;${value}m'
-	printf "Values 30..37 are \e[33mforeground colors\e[m\n"
-	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
-	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
-
-	# foreground colors
-	for fgc in {30..37}; do
-		# background colors
-		for bgc in {40..47}; do
-			fgc=${fgc#37} # white
-			bgc=${bgc#40} # black
-
-			vals="${fgc:+$fgc;}${bgc}"
-			vals=${vals%%;}
-
-			seq0="${vals:+\e[${vals}m}"
-			printf "  %-9s" "${seq0:-(default)}"
-			printf " ${seq0}TEXT\e[m"
-			printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
-		done
-		echo; echo
-	done
-}
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 # Change the window title of X terminals
 case ${TERM} in
 	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
-		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
+		PROMPT_COMMAND=''
+		# PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
 		;;
 	screen*)
 		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
@@ -75,7 +51,7 @@ if ${use_color} ; then
 		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
 	fi
 
-	alias ls='ls --color=auto'
+	alias ls='ls --sort=extension --color=auto'
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
@@ -143,12 +119,19 @@ alias la="ls -a"
 alias ll="ls -l"
 alias e="nvim"
 alias vim="nvim"
+alias ..="cd ../"
 
 # Common Command (Workflow) Aliases
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias bashrc="nvim ~/.bashrc"
 alias polybarconfig="nvim ~/.config/polybar/config"
+alias openboxconfig="nvim ~/.config/openbox/rc.xml"
 alias terminal="urxvt"
+
+# Directory aliases
+alias drexel="cd ~/doc/drexel/"
+alias scripts="cd ~/doc/scripts/"
+alias projects="cd ~/doc/porjects"
 
 # Custom class session Aliases
 alias cs-164="tmuxinator start cs-164"
@@ -158,3 +141,8 @@ alias cs-101="tmuxinator start cs-101"
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
+# NNN File Manager
+export NNN_BMS='d:~/doc;D:~/doc/drexel/'
+export NNN_USE_EDITOR=1
+
+PATH=$PATH:$HOME/doc/scripts

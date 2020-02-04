@@ -23,14 +23,13 @@ iabbrev drawgrid
 \<CR>\end{tikzpicture}
 \<CR>\end{center} 
 
-" Math markdown document header
-iabbrev mathhead 
-\<CR>---
-\<CR>header-includes:
-\<CR><Tab>- \usepackage{tikz}
-\<CR><Tab>- \usepackage{pgfplots} 
-\<CR>---
-\<CR>
-\<CR><link rel="stylesheet" type="text/css" href="/home/jed/.css/tufte/tufte.css" />
-
-
+" Markdown code and output display
+iabbrev dispcode
+\<CR>| Code                                    | Output              |
+\<CR>|:----------------------------------------|--------------------:|
+\<CR>|```
+\<CR>[Code Goes Here]
+\<CR>```|
+\<CR>```
+\<CR>[Output Goes Here] 
+\<CR>```|

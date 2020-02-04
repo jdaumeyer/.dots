@@ -1,5 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/jed/.surf/styles'
-let g:netrw_dirhist_2='/home/jed/.config'
-let g:netrw_dirhist_3='/home/jed/.config/Thunar'
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/jed/doc/projects/programming/minecraft-server/logs'
+let g:netrw_dirhist_4='/home/jed/.xfiles/colors'
+let g:netrw_dirhist_3='/home/jed/.xfiles'
+let g:netrw_dirhist_2='/home/jed'
+let g:netrw_dirhist_1='/usr/share/lightdm-webkit/themes/hyper'
+let g:netrw_dirhist_0='/usr/share/lightdm-webkit/themes'
+let g:netrw_dirhist_9='/usr/share/lightdm-webkit'
+let g:netrw_dirhist_8='/home/jed/.dots/nvim/syntax'
+let g:netrw_dirhist_7='/home/jed/.dots/themes/apollo/awesome'
+let g:netrw_dirhist_6='/home/jed/.dots/themes/default'

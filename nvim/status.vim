@@ -3,7 +3,7 @@ let g:currentmode={
     \ 'no'     : 'N·Operator Pending ',
     \ 'v'      : '[VISUAL]',
     \ 'V'      : 'V·Line',
-    \ '\<C-V>' : 'V·Block',
+    \ '<C-V>' : 'V·Block',
     \ 's'      : 'Select',
     \ 'S'      : 'S·Line',
     \ '\<C-S>' : 'S·Block',
@@ -17,7 +17,8 @@ let g:currentmode={
     \ 'rm'     : 'More',
     \ 'r?'     : 'Confirm',
     \ '!'      : 'Shell',
-    \ 't'      : 'Terminal'
+    \ 't'      : 'Terminal',
+    \ '^V'     : 'V-Block'
     \}
 
 function! ChangeStatuslineColor()
@@ -40,16 +41,24 @@ endfunction
 
 set laststatus=2
 set statusline=
+
+" Show Current Mode
 set statusline=%1*\ 
 set statusline+=%{ChangeStatuslineColor()}
 set statusline+=%0*%{toupper(g:currentmode[mode()])}
+
+" Show file name
 set statusline+=%4*\ %t
+
 set statusline+=%1* 
 set statusline+=%=
+
 set statusline+=%4*\ %y
+
 set statusline+=%1*\ 
 set statusline+=%4*
 set statusline+=%p
+
 set statusline+=%4*\ 
 set lazyredraw!
 
@@ -57,3 +66,6 @@ hi User1 ctermfg = 15 ctermbg = 0
 hi User2 ctermfg = 0  ctermbg = 2
 hi User3 ctermfg = 0  ctermbg = 15
 hi User4 ctermfg = 15 ctermbg = 0
+
+" Opened buffers
+hi User5 ctermfg = 8  ctermbg = 0

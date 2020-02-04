@@ -5,8 +5,7 @@ endif
 
 set background=dark
 
-" Special
-hi clear Cursor
+" Special hi clear Cursor
 hi Cursor     ctermfg=15 ctermbg=8
 hi TermCursor ctermfg=0  ctermbg=8
 hi CursorLine ctermfg=0  ctermbg=8
@@ -20,14 +19,21 @@ hi Comment   ctermfg=8  ctermbg=0
 hi Constant  ctermfg=7  ctermbg=0
 hi String    ctermfg=2  ctermbg=0 cterm=italic
 hi Statement ctermfg=15 ctermbg=0 cterm=bold
-hi Keyword   ctermfg=2  ctermbg=0 cterm=bold
+hi Keyword   ctermfg=4  ctermbg=0 cterm=bold
 hi Label     ctermfg=2  ctermbg=0 cterm=bold
 hi Type      ctermfg=2  ctermbg=0 cterm=bold
 hi Error     ctermfg=0  ctermbg=9 cterm=bold
+hi Special   ctermfg=15 ctermbg=0
+hi Question  ctermbg=0
 
+hi Folded    ctermfg=7  ctermbg=8 
 
 " Selections
 hi Visual ctermfg=15 ctermbg=12
 
 " Spelling
 hi SpellBad ctermfg=9  ctermbg=0  cterm=underline
+
+" Splits
+hi VertSplit    ctermfg=15 ctermbg=0
+hi StatusLineNC ctermfg=15 ctermbg=0

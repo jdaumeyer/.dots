@@ -44,6 +44,7 @@ window.*.label.bg: flat
 window.*.title.bg: flat
 window.*.label.bg.color: #2a2929
 window.*.title.bg.color: #2a2929
+window.active.*.bg.color: #2a2929
 window.*.label.text.color: #2a2929
 window.*.label.text.justiy: center
 
@@ -52,9 +53,13 @@ window.*.button.*.bg: parentrelative
 window.*.button.*.*.image.color: #e4e4e5
 
 !! osd
-osd.label.text.color: #e4e4e5
+osd.label.bg: flat
+osd.label.bg.color: #e4e4e5
+osd.label.text.color: #2a2929
 osd.hilight.bg: flat
 osd.hilight.bg.color: #d0b75a
+osd.bg: flat
+osd.bg.color: #e4e4e5
 
 
 ## buttons

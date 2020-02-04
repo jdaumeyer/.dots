@@ -8,6 +8,8 @@
 
 ! black
 *.color0:       #2a2929
+
+! selected
 *.color8:       #655c5a
 
 ! red
