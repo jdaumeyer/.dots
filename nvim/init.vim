@@ -41,6 +41,13 @@ set textwidth=0
 set wrapmargin=0
 set formatoptions+=l
 
+"---------------
+" Newtr SETTINGS
+"---------------
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 25
+
 "-------------
 " KEY MAPPINGS
 "-------------

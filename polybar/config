@@ -3,6 +3,24 @@
 ; bars                                      ;
 ;--------------------------------------------
 
+
+[bar/bspwm]
+	width = 100%
+	height = 32
+	offset-x = 0
+	offset-y = 8
+
+	bottom = false
+	background = #00000000
+	foreground = {xrdb:background}
+
+	font-0 = "IBM Plex Sans;size=5"
+	font-1 = "Material Icons:size=6;4"
+	
+	modules-left = workspaces
+	modules-right = 
+
+
 ; Openbox Botton Bar
 [bar/bottom]
 	dpi      = 192
@@ -17,17 +35,18 @@
 	foreground = ${xrdb:foreground)
 	
 	spacing            = 0
-	padding-left       = 16
-	padding-right      = 16
-	padding-bottom	   = 8
+	padding-left       = 0
+	padding-right      = 0
+	padding-bottom	   = 16
 	module-margin-left = 0
 	
 	font-0 = "Overpass:size=5;3"
 	font-1 = "Material Icons:size=6;4"
 	
-	diplay=eDP1
 
-	modules-left   = workspaces
+	wm-restack = i3
+
+	modules-left   = i3
 	modules-center = xwindow
 	modules-right  = spotify separator date battery volume
 	
@@ -54,6 +73,8 @@
 ;--------------------------------------------
 ; modules                                   ;
 ;--------------------------------------------
+
+
 
 [module/network]
 	type          = internal/network
@@ -212,6 +233,24 @@
 	content-padding    = 0.1
 	content-background = #00000000
 	content-foreground = #00000000
+
+
+[module/i3]
+	type = internal/i3
+	format = <label-mode><label-state>
+	pin-workspaces = true
+	index-sort = true
+	enable-scroll = false
+	label-mode = %mode%
+	label-focused = "%{T2}%{T-}"
+	label-focused-padding = 3
+	label-focused-foreground = ${xrdb:background}
+	label-focused-background = ${xrdb:color11}
+	label-unfocused = "%{T2}%{T-}"
+	label-unfocused-padding    = 3
+	label-unfocused-background = ${xrdb:background}
+	label-unfocused-foreground = ${xrdb:color7}
+
 
 
 [module/workspaces]

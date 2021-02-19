@@ -14,22 +14,36 @@ local theme = {}
 
 theme.font          = "Hermit 10"
 
-theme.bg_normal     = colors["color0"]
+theme.transparent   = "#FFFFFF00"
+theme.bg_normal     = theme.transparent
 theme.bg_focus      = colors["color8"]
 theme.bg_urgent     = colors["color1"]
 theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
+theme.bg_systray    = theme.transparent
 
 theme.fg_normal     = colors["foreground"]
 theme.fg_focus      = colors["foreground"]
 theme.fg_urgent     = colors["color1"]
 theme.fg_minimize   = colors["color8"] 
 
-theme.useless_gap   = dpi(0)
-theme.border_width  = dpi(0)
-theme.border_normal = colors["color0"]
-theme.border_focus  = colors["color8"]
+theme.useless_gap   = dpi(10)
+theme.border_width  = dpi(1)
+theme.border_normal = colors["color8"]
+theme.border_focus  = colors["foreground"]
 theme.border_marked = colors["color1"]
+
+theme.tasklist_bg_focus = theme.transparent
+theme.taglist_bg  = theme.transparent
+theme.taglist_bg_focus = theme.transparent
+theme.taglist_fg_focus = "#FFFFFF"
+theme.taglist_fg = colors["color5"]
+theme.titlebar_bg    = colors["background"]
+theme.titlebar_fg    = colors["color8"]
+theme.titlebar_fg_focus = colors["foreground"]
+
+theme.tooltip_bg_color = colors["background"]
+theme.tasklist_bg = theme.transparent
+
 
 -- There are other variable sets
 -- overriding the apollo one when
@@ -45,7 +59,7 @@ theme.border_marked = colors["color1"]
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
+local taglist_square_size = dpi(1)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.fg_normal
 )
